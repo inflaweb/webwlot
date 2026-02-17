@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Registro - Elote Style</title>
+    <link rel="stylesheet" href="css/styles1.css">
+    <link rel="stylesheet" href="https://unpkg.com/akar-icons-fonts/src/css/akar-icons.css">
+    <script src="js/validation.js" defer></script>
+</head>
+<body>
+
+    <aside class="sidebar">
+        <div class="left">
+            <img src="https://ui-avatars.com/api/?name=User&background=FFD700&color=6F4E37" alt="User">
+            <button title="Inicio" class="nav-trigger"><i class="ai-home-alt1"></i></button>
+            <button title="Eventos" class="nav-trigger"><i class="ai-calendar"></i></button>
+            <button title="Usuario" class="nav-trigger"><i class="ai-person"></i></button>
+        </div>
+
+        <div class="right">
+            <h1>Menú Principal</h1>
+            
+            <section>
+                <h2>General</h2>
+                <nav class="buttons">
+                    <button onclick="window.location.href='index.html'"><i class="ai-gear"></i><span>Servicio</span></button>
+                    <button><i class="ai-newspaper"></i><span>Noticias</span></button>
+                </nav>
+            </section>
+
+            <section>
+                <h2>Eventos</h2>
+                <nav class="buttons">
+                    <button><i class="ai-ticket"></i><span>Reserva</span></button>
+                </nav>
+            </section>
+
+            <section>
+                <h2>Ajustes</h2>
+                <nav class="buttons">
+                    <button><i class="ai-face-happy"></i><span>Yo</span></button>
+                    <button onclick="window.location.href='soporte.html'"><i class="ai-gear"></i><span>Soporte</span></button>
+               <button onclick="window.location.href='register.html'">
+            <i class="ai-arrow-right"></i>
+            <span>Iniciar</span>
+        </button>             
+     </nav>
+            </section>
+        </div>
+    </aside>
+
+    <main class="content">
+        <div class="my-form">
+            <div class="login-welcome-row">
+                <h1>Crea tu cuenta</h1>
+                <p>¡Únete a nuestra comunidad!</p>
+            </div>
+
+            <form id="registerForm">
+                <div class="input_wrapper">
+                    <input type="email" id="email" class="input_field" placeholder=" " required>
+                    <label for="email" class="input_label">Correo electrónico</label>
+                </div>
+
+                <div class="input_wrapper">
+                    <input type="password" id="password" class="input_field" placeholder=" " required minlength="6">
+                    <label for="password" class="input_label">Contraseña</label>
+                </div>
+
+                <div class="input_wrapper">
+                    <input type="password" id="confirmPassword" class="input_field" placeholder=" " required>
+                    <label for="confirmPassword" class="input_label">Confirmar contraseña</label>
+                </div>
+
+                <div class="input_wrapper">
+                    <input type="text" id="captcha" class="input_field" placeholder=" " required>
+                    <label for="captcha" class="input_label">¿Cuánto es 5 + 3?</label>
+                </div>
+
+                <button type="submit" class="my-form_button">Registrarme</button>
+
+                <div class="my-form_actions">
+                    <p>¿Ya tienes cuenta? <a href="inicio.html">Inicia sesión aquí</a></p>
+                </div>
+            </form>
+        </div>
+    </main>
+
+</body>
+</html>

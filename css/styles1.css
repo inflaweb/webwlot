@@ -1,0 +1,410 @@
+/* --- VARIABLES Y PALETA --- */
+:root {
+    /* Paleta Elote (Sidebar) */
+    --amarillo-elote: #FFD700;
+    --verde-hoja: #76B947;
+    --marron-tabaco: #6F4E37;
+    --plata-satinado: #C0C0C0;
+    --naranja-atardecer: #FF8C00;
+    --negro-trazo: #2B2B2B;
+    --text-white: #f9f9f9;
+    --transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* Variables del Login Form */
+    --primary: #76B947; /* Ajustado al Verde Hoja para consistencia */
+    --primary-dark: #5a9132;
+    --secondary: #1D1D1D;
+    --social-background: #E9E9E9;
+    --social-background-hover: #dddddd;
+    --text: #13162a;
+    --white: #FFFFFF;
+}
+
+/* Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: radial-gradient(circle at top right, var(--naranja-atardecer), #9e4600);
+    color: var(--text-white);
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    min-height: 100vh;
+    display: flex;
+}
+
+/* --- SIDEBAR --- */
+.sidebar {
+    position: fixed;
+    overflow: hidden;
+    top: 24px;
+    left: 24px;
+    bottom: 24px;
+    width: 80px;
+    background: var(--verde-hoja);
+    border-radius: 20px;
+    transition: width var(--transition);
+    z-index: 1000;
+    box-shadow: 15px 0 35px rgba(0,0,0,0.3);
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.left {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 80px;
+    background: var(--verde-hoja);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 2;
+    padding-top: 20px;
+}
+
+.left img {
+    width: 45px;
+    height: 45px;
+    margin-bottom: 30px;
+    border-radius: 50%;
+    border: 2px solid var(--amarillo-elote);
+}
+
+.left button {
+    all: unset;
+    width: 48px;
+    height: 48px;
+    background: var(--marron-tabaco);
+    color: var(--amarillo-elote);
+    border-radius: 12px;
+    display: grid;
+    place-items: center;
+    margin-bottom: 18px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.left button:hover {
+    background: var(--amarillo-elote);
+    color: var(--marron-tabaco);
+    transform: translateX(5px);
+}
+
+.right {
+    position: absolute;
+    left: 80px;
+    width: 220px;
+    height: 100%;
+    background: var(--marron-tabaco);
+    translate: -100% 0;
+    transition: var(--transition);
+    z-index: 1;
+    padding: 25px;
+    box-sizing: border-box;
+    opacity: 0;
+}
+
+.right h1 {
+    color: var(--amarillo-elote);
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--naranja-atardecer);
+    padding-bottom: 10px;
+}
+
+.right h2 {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    color: var(--plata-satinado);
+    margin: 20px 0 10px 0;
+}
+
+.right .buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.right button {
+    all: unset;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.right button i {
+    background: var(--negro-trazo);
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    display: grid;
+    place-items: center;
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+    cursor: pointer;
+    color: var(--white);
+}
+
+.right button:hover i {
+    background: var(--naranja-atardecer);
+    color: var(--amarillo-elote);
+}
+
+/* Interacción Sidebar */
+.sidebar:hover, .sidebar.is-active { width: 300px; }
+.sidebar:hover .right, .sidebar.is-active .right { translate: 0; opacity: 1; }
+
+/* --- CONTENIDO PRINCIPAL --- */
+.content {
+    margin-left: 120px;  /* Espacio para la sidebar colapsada */
+    padding: 60px;       /* Más espacio */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* --- ESTILOS DEL FORMULARIO DE LOGIN --- */
+.my-form {
+    font-family: 'Work Sans', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    position: relative;
+    gap: 1rem;
+    background-color: var(--white);
+    width: 100%;
+    max-width: 50rem;   
+    padding: 3rem;     
+    border-radius: 1rem;
+    height: fit-content;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    color: var(--text);
+}
+
+
+.login-welcome-row {
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.login-welcome-row h1 {
+    color: var(--text);
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.login-welcome-row p {
+    color: #666;
+}
+
+.my-form_button {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0.5rem;
+    line-height: 3.125rem;
+    font-size: 1.125rem;
+    cursor: pointer;
+    font-weight: 800;
+    min-height: 3.125rem;
+    width: 100%;
+    border-radius: 0.75rem;
+    transition: all .3s ease;
+}
+
+.my-form_button:hover {
+    background-color: var(--primary-dark);
+}
+
+/* Inputs animados */
+.input_wrapper {
+    position: relative;
+    padding: 0.9375rem 0 0;
+    margin-bottom: 0.5rem;
+}
+
+.input_field {
+    font-size: 1.2rem;
+    color: var(--text);
+    padding: 0.375rem 0;
+    padding-right: 2rem;
+    padding-bottom: 0.5rem;
+    line-height: 2rem;
+    height: 2rem;
+    outline: 0;
+    border: 0;
+    width: 100%;
+    border-bottom: 3px solid #ccc;
+    background: transparent;
+    transition: border-color 0.2s;
+}
+
+.input_field::placeholder { color: transparent; }
+
+.input_label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 1rem;
+    color: #9b9b9b;
+    pointer-events: none; /* Permite clickear el input a través del label */
+}
+
+/* Efecto Floating Label */
+.input_field:placeholder-shown ~ .input_label {
+    font-size: 1.2rem;
+    cursor: text;
+    top: 1.2rem;
+}
+
+.input_field:focus ~ .input_label,
+.input_field:not(:placeholder-shown) ~ .input_label {
+    top: -0.2rem;
+    font-size: 0.9rem;
+    color: var(--primary);
+    font-weight: 700;
+}
+
+.input_field:focus {
+    border-bottom: 3px solid var(--primary);
+}
+
+/* Socials & Actions */
+.socials-row {
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+}
+
+.socials-row > a {
+    padding: 0.5rem;
+    border-radius: 0.75rem;
+    width: 100%;
+    min-height: 3rem;
+    display: flex;
+    gap: 0.75rem;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-size: 0.95rem;
+    color: var(--text);
+    background: var(--social-background);
+    font-weight: 700;
+    transition: all .3s ease-in-out;
+}
+
+.socials-row > a:hover {
+    background: var(--social-background-hover);
+    border: 1px solid var(--primary);
+}
+
+.my-form_actions {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    gap: 1rem;
+    width: 100%;
+    margin-top: 0.5rem;
+    text-align: center;
+}
+
+.my-form_actions a {
+    color: var(--primary);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.my-form_actions a:hover { text-decoration: underline; }
+
+
+/* --- RESPONSIVO --- */
+@media (max-width: 768px) {
+    .content { margin-left: 0; margin-bottom: 100px; padding: 20px; }
+    .sidebar {
+        top: auto; left: 0; right: 0; bottom: 0;
+        width: 100% !important;
+        height: 75px;
+        border-radius: 20px 20px 0 0;
+        overflow: visible; /* Para permitir que crezca hacia arriba */
+    }
+    .left {
+        width: 100%; height: 75px;
+        flex-direction: row;
+        justify-content: space-around;
+        padding-top: 0;
+    }
+    .left img { display: none; }
+    
+    .right {
+        left: 0; bottom: 75px; top: auto;
+        width: 100%; height: 0;
+        translate: 0 100%;
+    }
+
+    /* JavaScript Toggle Class */
+    .sidebar.is-active { height: 400px; }
+    .sidebar.is-active .right { height: 325px; translate: 0 0; opacity: 1; }
+}
+
+/* --- ESTILOS PÁGINA DE ERROR (Agrega esto al final de tu CSS) --- */
+
+.error-page {
+    /* Asegura que el error esté centrado incluso si la sidebar está oculta/móvil */
+    margin: 0 !important;
+    width: 100vw;
+    height: 100vh;
+}
+
+.error-container {
+    text-align: center;
+    align-items: center; /* Centra elementos flex verticalmente */
+    border-top: 5px solid var(--naranja-atardecer); /* Un toque de alerta sutil */
+}
+
+.error-icon {
+    font-size: 4rem;
+    color: var(--naranja-atardecer);
+    margin-bottom: 1rem;
+    animation: float 3s ease-in-out infinite;
+}
+
+.error-code {
+    font-size: 5rem;
+    line-height: 1;
+    font-weight: 800;
+    color: var(--marron-tabaco);
+    margin: 0;
+}
+
+.error-title {
+    font-size: 1.5rem;
+    color: var(--primary);
+    margin: 1rem 0 0.5rem 0;
+}
+
+.error-message {
+    color: #666;
+    font-size: 1rem;
+    line-height: 1.5;
+    max-width: 90%;
+    margin-bottom: 2rem;
+}
+
+/* Animación suave para el icono */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}

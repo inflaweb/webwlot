@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Reserva - Elote Style</title>
+    <link rel="stylesheet" href="css/styles1.css">
+    <link rel="stylesheet" href="https://unpkg.com/akar-icons-fonts/src/css/akar-icons.css">
+    <script src="js/proteger.js" defer></script>
+    <script src="js/admin.js" defer></script>
+</head>
+<body>
+
+<aside class="sidebar">
+        <div class="left">
+            <img src="https://ui-avatars.com/api/?name=User&background=FFD700&color=6F4E37" alt="User">
+            <button title="Inicio" class="nav-trigger"><i class="ai-home-alt1"></i></button>
+            <button title="Eventos" class="nav-trigger"><i class="ai-calendar"></i></button>
+            <button title="Usuario" class="nav-trigger"><i class="ai-person"></i></button>
+        </div>
+
+        <div class="right">
+            <h1>Menú Principal</h1>
+            
+            <section>
+                <h2>General</h2>
+                <nav class="buttons">
+                    <button onclick="window.location.href='index.html'">
+                        <i class="ai-gear"></i><span>Servicio</span>
+                    </button>
+                    <button>
+                        <i class="ai-newspaper"></i><span>Noticias</span>
+                    </button>
+                </nav>
+            </section>
+
+            <section>
+                <h2>Eventos</h2>
+                <nav class="buttons">
+                    <button>
+                        <i class="ai-ticket"></i><span>Reserva</span>
+                    </button>
+                </nav>
+            </section>
+
+            <section>
+                <h2>Ajustes</h2>
+                <nav class="buttons">
+                    <button>
+                        <i class="ai-face-happy"></i><span>Yo</span>
+                    </button>
+                    <button onclick="window.location.href='soporte.html'">
+                        <i class="ai-gear"></i><span>Soporte</span>
+                    </button>
+                    <button onclick="window.location.href='register.html'">
+                        <i class="ai-person-add"></i>
+                        <span>Registrarse</span>
+                    </button>             
+                </nav>
+            </section>
+        </div>
+    </aside>
+
+
+    <main class="content">
+    <div class="my-form">
+        <h1>Reservar Evento 🌽</h1>
+
+        <form id="reservaForm">
+
+            <!-- Nombre -->
+            <div class="input_wrapper">
+                <input type="text" id="nombre" class="input_field" placeholder=" " required>
+                <label class="input_label">Nombre Completo</label>
+            </div>
+
+            <!-- Teléfono -->
+            <div class="input_wrapper">
+                <input type="tel" id="telefono" class="input_field" placeholder=" " required pattern="[0-9]{10}">
+                <label class="input_label">Teléfono (10 dígitos)</label>
+            </div>
+
+            <!-- Fecha -->
+            <div class="input_wrapper">
+                <input type="date" id="fecha" class="input_field" required>
+                <label class="input_label">Fecha del evento</label>
+            </div>
+
+            <!-- Personas -->
+            <div class="input_wrapper">
+                <input type="number" id="personas" class="input_field" placeholder=" " required>
+                <label class="input_label">Número de personas</label>
+            </div>
+
+            <!-- Selección de paquete -->
+            <div class="input_wrapper">
+                <select id="paquete" class="input_field" required>
+                    <option value="">Selecciona un paquete</option>
+                    <option value="1">Paquete El Clásico</option>
+                    <option value="2">Dúo Tradicional</option>
+                    <option value="3">Crunch Time</option>
+                    <option value="4">Gourmet Grill</option>
+                    <option value="5">Mix Premium</option>
+                    <option value="6">El Especialista</option>
+                    <option value="7">Tosti-Locura</option>
+                    <option value="8">Combo Explosivo</option>
+                    <option value="9">Elote Party Pack</option>
+                    <option value="10">Tosti-Chasca</option>
+                    <option value="11">Banquete Callejero</option>
+                </select>
+            </div>
+
+            <!-- Información del paquete -->
+            <div id="infoPaquete" style="margin:15px 0; font-size:14px;"></div>
+
+            <button type="submit" class="my-form_button">
+                Confirmar Reserva
+            </button>
+
+            <button type="button" onclick="cerrarSesion()" class="my-form_button">
+                Cerrar Sesión
+            </button>
+
+        </form>
+    </div>
+</main>
+
+</body>
+</html>

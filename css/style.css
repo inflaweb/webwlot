@@ -1,0 +1,82 @@
+:root {
+    --amarillo-elote: #FFD700;
+    --verde-hoja: #76B947;
+    --marron-tabaco: #6F4E37;
+    --naranja-atardecer: #FF8C00;
+    --negro-trazo: #2B2B2B;
+    --text-white: #f9f9f9;
+}
+
+body {
+    margin: 0;
+    background: radial-gradient(circle at top right, var(--naranja-atardecer), #9e4600);
+    color: var(--text-white);
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+}
+
+.content {
+    margin-left: 120px;
+    padding: 40px;
+    flex: 1;
+}
+
+.sidebar {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    bottom: 20px;
+    width: 80px;
+    background: var(--verde-hoja);
+    border-radius: 20px;
+    transition: 0.4s;
+}
+
+.sidebar:hover {
+    width: 260px;
+}
+
+.left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+}
+
+.left button {
+    margin: 10px 0;
+    background: var(--marron-tabaco);
+    color: var(--amarillo-elote);
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.search-box input, .search-box select {
+    padding: 8px;
+    margin: 5px;
+    border-radius: 8px;
+    border: none;
+}
+
+.search-box button {
+    padding: 8px 15px;
+    border-radius: 8px;
+    border: none;
+    background: var(--amarillo-elote);
+    cursor: pointer;
+}
+
+.container {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(250px,1fr));
+    gap: 20px;
+}
+
+.card {
+    background: rgba(0,0,0,0.4);
+    padding: 20px;
+    border-radius: 15px;
+}
